@@ -15,6 +15,7 @@ function btnEncriptar(){
     textArea.value = "";
     Mensaje.style.backgroundImage = "none"
     
+    
 }
 
 
@@ -27,7 +28,6 @@ function encriptar(stringencriptada){
         if(stringencriptada.includes(matrizCodigo[i][0])){
             stringencriptada = stringencriptada.replaceAll(matrizCodigo[i][0],matrizCodigo[i][1])
             alert("Texto Encriptado con éxito")
-
         }
 
     }
@@ -48,18 +48,20 @@ function desencriptar(stringDesencriptada){
     stringDesencriptada = stringDesencriptada.toLowerCase()
 
     for(let i = 0; i < matrizCodigo.length; i++){
+        alert("Texto Desencriptado con éxito")
         if(stringDesencriptada.includes(matrizCodigo[i][1])){
             stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1],matrizCodigo[i][0])
-            alert("Texto Desencriptado con éxito")
-
         }
+        
 
     }
     return stringDesencriptada  
 }
 function copiar(){
+    alert("Texto Copiado")
     Mensaje.select();
     navigator.clipboard.writeText(Mensaje.value)
     Mensaje.value = "";
-    alert("Texto Copiado")
+    
+    
 }
